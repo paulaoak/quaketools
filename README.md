@@ -28,7 +28,7 @@ You can install the development version of quaketools from
 devtools::install_github("paulaoak/quaketools")
 ```
 
-## Example
+## Example from quaketools/zakvarty
 
 This is a basic example which shows you how to simulate random variates
 from a generalised Pareto distribution using `rgpd()`.
