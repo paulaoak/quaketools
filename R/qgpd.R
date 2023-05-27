@@ -32,20 +32,15 @@ qgpd <- function(p, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10){
     all(scale > 0)
     all(p >= 0)
     all(p <= 1)
-    length(p) %in% c(1,n)
-    length(scale) %in% c(1,n)
-    length(shape) %in% c(1,n)
-    length(shift) %in% c(1,n)
     length(shape_tolerance) == 1
     shape_tolerance >= 0
   })
 
   # Ensure q, scale, shape and mu are of same length.
-  if ((length(scale) == 1) & (n > 1)) { scale <- rep(scale, n) }
-  if ((length(shape) == 1) & (n > 1)) { shape <- rep(shape, n) }
-  if ((length(shift) == 1) & (n > 1)) { shift <- rep(shift, n) }
-  if ((length(p) == 1) & (n > 1)) {p <- rep(p, n)}
-
+  if ((length(scale) < n) & (n > 1)) { scale <- rep(scale, length.out = n) }
+  if ((length(shape) < n) & (n > 1)) { shape <- rep(shape, length.out = n) }
+  if ((length(shift) < n) & (n > 1)) { shift <- rep(shift, length.out = n) }
+  if ((length(p) < n) & (n > 1)) {p <- rep(p, length.out = n)}
 
   # Calculate quantiles
   q <- shift + (scale / shape) * ((1 - p)^(-shape) - 1)
@@ -61,6 +56,9 @@ qgpd <- function(p, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10){
     exp_qs <- shift + stats::qexp(p = exp_ps, rate = exp_rates)
     q[which_shape_near_zero] <- exp_qs
   }
-
+  
+  show_warning = !(sum(input_lengths) %in% c(n+3, 2*n+2, 3*n+1, 4*n))
+  if (show_warning) warning('Probability vector, scale, shape and shift parameter vectors are not of the same length; shorter vectors are recycled')
+  
   return(q)
 }
