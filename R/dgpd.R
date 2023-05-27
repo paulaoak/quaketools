@@ -25,6 +25,10 @@ dgpd <- function(x, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10, lo
   n <- max(input_lengths)
   stopifnot(exprs = {
     all(scale > 0)
+    length(x) > 1
+    length(scale) > 1
+    length(shape) > 1
+    length(shift) > 1
     length(shape_tolerance) == 1
     shape_tolerance >= 0
     length(log) == 1
