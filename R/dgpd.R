@@ -25,10 +25,6 @@ dgpd <- function(x, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10, lo
   n <- max(input_lengths)
   stopifnot(exprs = {
     all(scale > 0)
-    length(x) %in% c(1,n)
-    length(scale) %in% c(1,n)
-    length(shape) %in% c(1,n)
-    length(shift) %in% c(1,n)
     length(shape_tolerance) == 1
     shape_tolerance >= 0
     length(log) == 1
@@ -36,10 +32,10 @@ dgpd <- function(x, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10, lo
   })
 
   # Ensure x, scale, shape and mu are of same length.
-  if ((length(scale) == 1) & (n > 1)) { scale <- rep(scale, n) }
-  if ((length(shape) == 1) & (n > 1)) { shape <- rep(shape, n) }
-  if ((length(shift) == 1) & (n > 1)) { shift <- rep(shift, n) }
-  if ((length(x) == 1) & (n > 1)) { x <- rep(x, n) }
+  if ((length(scale) < n) & (n > 1)) { scale <- rep(scale, length.out = n) }
+  if ((length(shape) < n) & (n > 1)) { shape <- rep(shape, length.out = n) }
+  if ((length(shift) < n) & (n > 1)) { shift <- rep(shift, length.out = n) }
+  if ((length(x) < n) & (n > 1)) {x <- rep(x, length.out = n)}
 
   # Calculate the GPD (log-)density at each point in x
   if (log) {
@@ -66,6 +62,9 @@ dgpd <- function(x, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10, lo
     out[which_shape_near_zero] <- exp_densities
   }
 
+  show_warning = !(sum(input_lengths) %in% c(n+3, 2*n+2, 3*n+1, 4*n))
+  if (show_warning) warning('Vector of values, scale, shape and shift parameter vectors are not of the same length; shorter vectors are recycled')
+  
   return(out)
 }
 
