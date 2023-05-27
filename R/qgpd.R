@@ -32,6 +32,10 @@ qgpd <- function(p, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10){
     all(scale > 0)
     all(p >= 0)
     all(p <= 1)
+    length(p) > 1
+    length(scale) > 1
+    length(shape) > 1
+    length(shift) > 1
     length(shape_tolerance) == 1
     shape_tolerance >= 0
   })
