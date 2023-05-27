@@ -41,17 +41,14 @@ rgpd <- function(n, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10){
   # Check inputs
   stopifnot(exprs = {
     all(scale > 0)
-    length(scale) %in% c(1,n)
-    length(shape) %in% c(1,n)
-    length(shift) %in% c(1,n)
     length(shape_tolerance) == 1
     shape_tolerance >= 0
   })
 
   # Ensure scale, shape and shift are of same length.
-  if ((length(scale) == 1) & (n > 1)) { scale <- rep(scale, n) }
-  if ((length(shape) == 1) & (n > 1)) { shape <- rep(shape, n) }
-  if ((length(shift) == 1) & (n > 1)) { shift <- rep(shift, n) }
+  if ((length(scale) < n) & (n > 1)) { scale <- rep(scale, length.out = n) }
+  if ((length(shape) < n) & (n > 1)) { shape <- rep(shape, length.out = n) }
+  if ((length(shift) < n) & (n > 1)) { shift <- rep(shift, length.out = n) }
 
   # Simulate sample
   U <- stats::runif(n)
@@ -66,5 +63,9 @@ rgpd <- function(n, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10){
     sample[which_shape_near_zero] <- shift + exp_samples
   }
 
+  # Show warning if latent parameters of the GPD are not of the same length and the ones of different lengths are not unit vectors
+  show_warning = !(sum(input_lengths) %in% c(n+2, 2*n+1, 3*n))
+  if (show_warning) warning('Scale, shape and shift parameter vectors are not of the same length; shorter vectors are recycled')
+  
   return(sample)
 }
