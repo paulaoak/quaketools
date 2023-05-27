@@ -6,10 +6,17 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
+This package was created by Zak Varty (quaketools/zakvarty), this is a 
+forked repository where we have made some minor changes.
+
 The goal of quaketools is to provide a collection of tools to make
 earthquake modelling easier. Functions will be provided to simulate
 from, estimate and evaluate common models used in statistical
 seismology.
+
+Minor changes made include allowing input parameters for the dgpd, pgpd, 
+qgpd and rgpd to be of different lengths, where shorter vectors are recycled,
+as in the stats::norm functions.
 
 ## Installation
 
@@ -18,7 +25,7 @@ You can install the development version of quaketools from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("zakvarty/quaketools")
+devtools::install_github("paulaoak/quaketools")
 ```
 
 ## Example
