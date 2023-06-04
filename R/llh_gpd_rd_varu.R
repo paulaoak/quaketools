@@ -1,6 +1,8 @@
-#' @author Paula Cordero Encinar (based on zakvarty/threshold_paper_code)
+#' @title Log-likelihood of rounded GPD with variable threshold.
 #'
-#' Evaluate the (negative) log-likelihood of rounded GPD data with variable threshold.
+#' @description Function to evaluate the (negative) log-likelihood of rounded GPD data with variable threshold.
+#'
+#' @author Paula Cordero Encinar (based on zakvarty/threshold_paper_code)
 #'
 #' @param sigxi GPD parameters at threshold u.
 #' @param u (Low) latent threshold of continuous GPD for which sigxi is given.
@@ -10,7 +12,6 @@
 #' @param negative Logical. Return negative log-likelihood?
 #'
 #' @return (Negative) log-likelihood of rounded GPD data with variable threshold.
-#' @export
 #'
 #' @examples
 #' #simulate data
@@ -19,6 +20,7 @@
 #' llh_gpd_rd_varu(sigxi = c(0.1, -0.01), u = 1, v= v, x=x)
 #' llh_gpd_rd_varu(sigxi = c(0.1, -0.5), u = 1, v= v, x=x)
 #'
+#' @export
 llh_gpd_rd_varu <- function(sigxi, u, v, x, to_nearest = 0.1, negative = FALSE){
 
   # Check inputs
