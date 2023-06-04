@@ -13,6 +13,9 @@
 #' Append "`_nu`" to the function name to use the \eqn{(\nu,\xi)} parametrisation
 #' instead, e.g. `dgpd_nu()`.
 #'
+#' Append "`_rd`" to the rgpd function to sample observations accounting for
+#' rounding, e.g. `rgpd_rd()`.
+#'
 #' @details
 #' Any shape values less than `shape_tolerance` are drawn from an exponential
 #' distribution using the inverse CDF method. This is mathematically equivalent
@@ -70,6 +73,6 @@ rgpd <- function(n, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10){
   # Show warning if latent parameters of the GPD are not of the same length and the ones of different lengths are not unit vectors
   show_warning = !(sum(input_lengths) %in% c(3, n+2, 2*n+1, 3*n))
   if (show_warning) warning('Scale, shape and shift parameter vectors are not of the same length; shorter vectors are recycled')
-  
+
   return(sample)
 }

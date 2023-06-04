@@ -45,6 +45,9 @@ generalised Pareto distribution.
 
 Append "\verb{_nu}" to the function name to use the \eqn{(\nu,\xi)} parametrisation
 instead, e.g. \code{dgpd_nu()}.
+
+Append "\verb{_rd}" to the rgpd function to sample observations accounting for
+rounding, e.g. \code{rgpd_rd()}.
 }
 \details{
 Any shape values less than \code{shape_tolerance} are drawn from an exponential
