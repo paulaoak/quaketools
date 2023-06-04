@@ -2,8 +2,6 @@
 #'
 #' @description Function to evaluate the (negative) log-likelihood of rounded GPD data with variable threshold.
 #'
-#' @author Paula Cordero Encinar (based on zakvarty/threshold_paper_code)
-#'
 #' @param sigxi GPD parameters at threshold u.
 #' @param u (Low) latent threshold of continuous GPD for which sigxi is given.
 #' @param v Vector of latent threshold values for each observation.
@@ -16,7 +14,7 @@
 #' @examples
 #' #simulate data
 #' v <- rep(c(1.6,1.2, 1.1), each = 50)
-#' x <- rgpd_rd(n = 100,scale = 1.1, shape = 0.2, shift = v, to_nearest = 0.1)
+#' x <- rgpd_rd(n = 150,scale = 1.1, shape = 0.2, shift = v, to_nearest = 0.1)
 #' llh_gpd_rd_varu(sigxi = c(0.1, -0.01), u = 1, v= v, x=x)
 #' llh_gpd_rd_varu(sigxi = c(0.1, -0.5), u = 1, v= v, x=x)
 #'

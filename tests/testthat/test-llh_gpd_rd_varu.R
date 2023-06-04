@@ -7,6 +7,9 @@ test_that("examples work", {
 })
 
 test_that("low latent threshold u of length greater than 1 is flagged", {
+  v <- rep(c(1.6,1.2, 1.1), each = 50)
+  x <- rgpd_rd(n = 150,scale = 1.1, shape = 0.2, shift = v, to_nearest = 0.1)
+
   expect_error(llh_gpd_rd_varu(sigxi = c(0.1, -0.01), u = 1:5, v= v, x=x))
 })
 
