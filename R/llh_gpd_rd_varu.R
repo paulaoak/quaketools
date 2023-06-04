@@ -30,6 +30,7 @@ llh_gpd_rd_varu <- function(sigxi, u, v, x, to_nearest = 0.1, negative = FALSE){
     is.numeric(to_nearest)
     length(to_nearest) == 1
     is.logical(negative)
+    u <= min(v)
   })
 
   # Latent GPD parameters
