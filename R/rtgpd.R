@@ -2,6 +2,7 @@
 #'
 #' @description Functions for working with the tapered generalised Pareto distribution:
 #'
+#' * `dtgpd()` gives the probability density function,
 #' * `ptgpd()` gives the cumulative distribution function,
 #' * `rtgpd()` generates random variates.
 #'
