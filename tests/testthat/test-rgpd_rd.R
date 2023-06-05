@@ -16,11 +16,11 @@ test_that("negative shape_tolerance is flagged",{
 })
 
 test_that("shape_tolerance of length > 1 is flagged", {
-  expect_error(rgpd_rd(n = 5, scale = ,shape = 0,shift = 0, shape_tolerance = 1:5 * 1e-5))
+  expect_error(rgpd_rd(n = 5, scale = 1,shape = 0,shift = 0, shape_tolerance = 1:5 * 1e-5))
 })
 
 test_that("to_nearest of length > 1 is flagged", {
-  expect_error(rgpd_rd(n = 5, scale = ,shape = 0,shift = 0, to_nearest = 1:5 * 0.1))
+  expect_error(rgpd_rd(n = 5, scale = 1,shape = 0,shift = 0, to_nearest = 1:5 * 0.1))
 })
 
 test_that("setting the seed works", {

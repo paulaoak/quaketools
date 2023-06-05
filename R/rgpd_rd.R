@@ -13,6 +13,7 @@
 #'
 #' @export
 rgpd_rd <- function(n, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10, to_nearest = 1, shift_latent = NULL){
+
   # Check inputs
   stopifnot(exprs = {
     all(scale > 0)
