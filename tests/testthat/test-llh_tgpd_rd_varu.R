@@ -2,7 +2,7 @@ test_that("examples work", {
   v <- rep(c(1.6,1.2, 1.1), each = 50)
   x <- rtgpd_rd(n = 150,scale = 1.1, shape = 0.2, shift = v, scale_taper = 2, to_nearest = 0.1)
 
-  expect_no_condition(llh_tgpd_rd_varu(sigxithetha = c(0.1, -0.01, 0.2), u = 1, v= v, x=x))
+  expect_no_condition(llh_tgpd_rd_varu(sigxitheta = c(0.1, -0.01, 0.2), u = 1, v= v, x=x))
   expect_no_condition(llh_tgpd_rd_varu(sigxitheta = c(0.1, 0.01, 0.2), u = 1, v= v, x=x))
 })
 
