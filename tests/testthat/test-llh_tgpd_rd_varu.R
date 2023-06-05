@@ -27,7 +27,7 @@ test_that("lower endpoint failure is flagged", {
   expect_error(llh_tgpd_rd_varu(sigxitheta = c(0.1, 0.01, 0.2), u = 1, v= v1, x=x1))
 })
 
-test_that("negative initial scale parameter leads to a value of -10e6 for likelihood",{
+test_that("negative initial scale parameters lead to a value of -10e6 for likelihood",{
   v2 <- rep(c(1.6,1.2), each = 50)
   x2 <- rtgpd_rd(n = 100, scale = 1.1, shape = 0.2, shift = v2, scale_taper = 2, to_nearest = 0.1)
 
