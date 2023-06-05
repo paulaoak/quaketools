@@ -43,6 +43,7 @@ rtgpd <- function(n, scale = 1, shape = 0, shift = 0, scale_taper = 2, shape_tol
   input_lengths <- c(length(scale), length(shape), length(shift), length(scale_taper))
   stopifnot(exprs = {
     all(scale > 0)
+    all(scale_taper > 0)
     length(scale) >= 1
     length(shape) >= 1
     length(shift) >= 1
