@@ -35,6 +35,6 @@ test_that("specifying shift latent works", {
   set.seed(1234)
   gpd_sample_3 <- rgpd_rd(n = 5, scale = 1, shape = 0, shift = 0, to_nearest = 0.1)
   set.seed(1234)
-  gpd_sample_4 <- rgpd_rd(n = 5, scale = 1, shape = 0, shift = 0, shift_latent = -0.05)
+  gpd_sample_4 <- rgpd_rd(n = 5, scale = 1, shape = 0, shift = 0, shift_latent = -0.05, to_nearest = 0.1)
   expect_equal(gpd_sample_3, gpd_sample_4)
 })
