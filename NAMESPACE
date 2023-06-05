@@ -3,6 +3,7 @@
 export(dgpd)
 export(dgpd_nu)
 export(llh_gpd_rd_varu)
+export(llh_gpd_varu)
 export(llh_tgpd_rd_varu)
 export(mle_gpd_rd_varu)
 export(pgpd)
