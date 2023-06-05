@@ -38,6 +38,7 @@ exponential distribution.}
 \description{
 Functions for working with the tapered generalised Pareto distribution:
 \itemize{
+\item \code{dtgpd()} gives the probability density function,
 \item \code{ptgpd()} gives the cumulative distribution function,
 \item \code{rtgpd()} generates random variates.
 }
