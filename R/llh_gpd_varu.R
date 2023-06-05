@@ -54,7 +54,7 @@ llh_gpd_varu <- function(sigxi, u, v, x, negative = FALSE){
     return((-1)^negative * llh)}
 
   # Log-likelihood
-  prob <- dgpd(q = x, shape = xi, scale = sig_v, shift = v)
+  prob <- dgpd(x = x, shape = xi, scale = sig_v, shift = v)
   llh <- sum(log(prob))
 
   return((-1)^negative * llh)
