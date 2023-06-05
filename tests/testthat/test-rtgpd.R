@@ -3,7 +3,7 @@ test_that("examples work", {
   expect_no_condition(rtgpd(n = 5, scale = 1:5, shape = 0.1, shift = 0, scale_taper = 10))
   expect_no_condition(rtgpd(n = 5, scale = 1, shape = 0.1 * 1:5, shift = 0, scale_taper = 3))
   expect_no_condition(rtgpd(n = 5, scale = 1, shape = 0, shift = 1:5, scale_taper = 10))
-  expect_no_condition(rtgpd(n = 5, scale = 1, shape = 0, shift = 0, scale_taper = 5:10))
+  expect_no_condition(rtgpd(n = 5, scale = 1, shape = 0, shift = 0, scale_taper = 6:10))
 })
 
 test_that("non-positive scale parameters are flagged", {
