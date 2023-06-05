@@ -23,13 +23,14 @@ rgpd_rd <- function(n, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10,
     length(to_nearest) == 1
     is.numeric(to_nearest)
     length(shape_tolerance) == 1
+    shape_tolerance > 0
   })
 
   # Function body
   if(is.null(shift_latent)) shift_latent = shift - 0.5 * to_nearest
 
   #sample gpd
-  x <- rgpd(n = n, scale = scale, shape = shape, shift = shift_latent)
+  x <- rgpd(n = n, scale = scale, shape = shape, shift = shift_latent, shape_tolerance = shape_tolerance)
   #compute rounded observations
   y <- x/to_nearest
   y <- round(y)
