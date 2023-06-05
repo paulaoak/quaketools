@@ -51,6 +51,6 @@ estimation of the hessian at the MLE.
 #simulate data
 v <- rep(c(1.6,1.2, 1.1), each = 50)
 x <- rgpd_rd(n = 150,scale = 1.1, shape = 0.2, shift = v, to_nearest = 0.1)
-mle_gpd_rd_varu(sigxi = c(0.1, -0.01), u = 1, v= v, x=x)
+mle_gpd_rd_varu(sigxi = c(1, 0.01), u = 1, v= v, x=x)
 
 }
