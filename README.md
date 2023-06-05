@@ -6,17 +6,19 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-This package was created by Zak Varty (quaketools/zakvarty), this is a 
-forked repository where we have made some minor changes.
+This package was initially created by Zak Varty (quaketools/zakvarty) with 
+function for the GPD distribution, this is a forked repository where 
+we have extended the package functionality.
 
 The goal of quaketools is to provide a collection of tools to make
 earthquake modelling easier. Functions will be provided to simulate
 from, estimate and evaluate common models used in statistical
 seismology.
 
-Minor changes made include allowing input parameters for the dgpd, pgpd, 
-qgpd and rgpd to be of different lengths, where shorter vectors are recycled,
-as in the stats::norm functions.
+Minor changes of the functions from the initial package include allowing 
+input parameters for the dgpd, pgpd, qgpd and rgpd to be of different 
+lengths, where shorter vectors are recycled, as in the stats::norm 
+functions.
 
 ## Installation
 
