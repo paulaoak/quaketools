@@ -39,7 +39,7 @@ rounding, e.g. \code{rgpd_rd()}.
 }
 \details{
 Any shape values less than \code{shape_tolerance} are calculated for an exponential
-distribution using \code{dexp()}.
+distribution using \code{pexp()}.
 }
 \examples{
 pgpd_nu(q = seq(-1, 2), shape = 0, scale_alt = 1)

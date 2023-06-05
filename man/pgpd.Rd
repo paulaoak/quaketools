@@ -42,7 +42,7 @@ rounding, e.g. \code{rgpd_rd()}.
 }
 \details{
 Any shape values less than \code{shape_tolerance} are calculated for an exponential
-distribution using \code{dexp()}.
+distribution using \code{pexp()}.
 }
 \examples{
 pgpd(q = seq(-1, 2), shape = 0, scale = 1)
@@ -50,5 +50,5 @@ pgpd(q = 1, shape = c(0,-1), scale = c(0.1,1))
 
 }
 \author{
-Zak Varty
+Zak Varty (slightly modified by Paula Cordero Encinar)
 }

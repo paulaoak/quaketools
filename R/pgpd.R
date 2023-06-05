@@ -2,9 +2,9 @@
 #'
 #' @details
 #' Any shape values less than `shape_tolerance` are calculated for an exponential
-#' distribution using `dexp()`.
+#' distribution using `pexp()`.
 #'
-#' @author Zak Varty
+#' @author Zak Varty (slightly modified by Paula Cordero Encinar)
 #'
 #' @inheritParams rgpd
 #' @param q Vector of quantiles.
@@ -61,10 +61,10 @@ pgpd <- function(q, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10){
     exp_ps <- stats::pexp(q = exp_qs, rate = exp_rates)
     p[which_shape_near_zero] <- exp_ps
   }
-  
+
   # Show warning if quantiles, shape, scale and shift inputs are not of the same length and the ones of different lengths are not unit vectors
   show_warning = !(sum(input_lengths) %in% c(n+3, 2*n+2, 3*n+1, 4*n))
   if (show_warning) warning('Quantile vector, scale, shape and shift parameter vectors are not of the same length; shorter vectors are recycled')
-  
+
   return(p)
 }
