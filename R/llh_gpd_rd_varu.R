@@ -51,7 +51,7 @@ llh_gpd_rd_varu <- function(sigxi, u, v, x, to_nearest = 0.1, negative = FALSE){
   #check all scale parameters are positive
   condition_1 <- sig_u <= 0
   #check all x below upper end-point (UEP) (if it exists, adjusting for rounding)
-  condition_2 <- (xi < 0) && (max(x) >= (u - sig_u / xi + delta))
+  condition_2 <- (xi < 0) && (max(x) >= round((u - sig_u / xi)/to_nearest)*to_nearest)
 
   if(condition_1 || condition_2){
     llh <- -10e6
