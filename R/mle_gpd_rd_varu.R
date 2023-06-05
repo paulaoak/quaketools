@@ -24,8 +24,8 @@
 #' x <- rgpd_rd(n = 150,scale = 1.1, shape = 0.2, shift = v, to_nearest = 0.1)
 #' mle_gpd_rd_varu(sigxi = c(1, 0.01), u = 1, v= v, x=x)
 #'
+#' @importFrom stats optim
 #' @export
-#'
 mle_gpd_rd_varu <- function(sigxi, u, v, x, to_nearest = 0.1, llh_val = TRUE, hessian = FALSE, method =  "Nelder-Mead", maxit = 10000, ...){
 
   # Check inputs
