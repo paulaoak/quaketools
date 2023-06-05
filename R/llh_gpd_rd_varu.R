@@ -1,6 +1,7 @@
 #' @title Log-likelihood of rounded GPD with variable threshold.
 #'
-#' @description Function to evaluate the (negative) log-likelihood of rounded GPD data with variable threshold.
+#' @description Function to evaluate the (negative) log-likelihood of rounded
+#' GPD data with variable threshold.
 #'
 #' @param sigxi GPD parameters at threshold u.
 #' @param u (Low) latent threshold of continuous GPD for which sigxi is given.
