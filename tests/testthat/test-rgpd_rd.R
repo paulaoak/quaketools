@@ -12,7 +12,7 @@ test_that("non-positive scale parameters are flagged", {
 })
 
 test_that("negative shape_tolerance is flagged",{
-  expect_error(rgpd(n = 5, scale = 1,shape = 0,shift = 0, shape_tolerance = -1))
+  expect_error(rgpd_rd(n = 5, scale = 1,shape = 0,shift = 0, shape_tolerance = -1))
 })
 
 test_that("shape_tolerance of length > 1 is flagged", {

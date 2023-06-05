@@ -22,6 +22,7 @@ rgpd_rd <- function(n, scale = 1, shape = 0, shift = 0, shape_tolerance = 1e-10,
     length(shift) >= 1
     length(to_nearest) == 1
     is.numeric(to_nearest)
+    length(shape_tolerance) == 1
   })
 
   # Function body
