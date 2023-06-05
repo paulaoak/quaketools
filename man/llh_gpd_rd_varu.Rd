@@ -23,7 +23,8 @@ llh_gpd_rd_varu(sigxi, u, v, x, to_nearest = 0.1, negative = FALSE)
 (Negative) log-likelihood of rounded GPD data with variable threshold.
 }
 \description{
-Function to evaluate the (negative) log-likelihood of rounded GPD data with variable threshold.
+Function to evaluate the (negative) log-likelihood of rounded
+GPD data with variable threshold.
 }
 \examples{
 #simulate data
