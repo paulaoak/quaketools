@@ -73,6 +73,9 @@ llh_gpd_rd_varu <- function(sigxi, u, v, x, to_nearest = 0.1, negative = FALSE){
     (pgpd(q = x_high,  shape = xi, scale = sig_u, shift = u) -
        pgpd(q = x_bottom,  shape = xi, scale = sig_u, shift = u))
 
+  #make sure that points for which x_max = x_bottom have weight 1
+  weight[x_bottom == x_max] <- 1
+
   llh <- sum(weight * (log(p_high - p_max)))
   return((-1)^negative * llh)
 
