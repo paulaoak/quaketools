@@ -75,6 +75,9 @@ llh_tgpd_rd_varu <- function(sigxitheta, u, v, x, to_nearest = 0.1, negative = F
     (ptgpd(q = x_high,  shape = xi, scale = sig_u, shift = u, scale_taper = theta) -
        ptgpd(q = x_bottom,  shape = xi, scale = sig_u, shift = u, scale_taper = theta))
 
+  #make sure that points for which x_max = x_bottom have weight 1
+  weight[x_bottom == x_max] <- 1
+
   llh <- sum(weight * (log(p_high - p_max)))
   return((-1)^negative * llh)
 
