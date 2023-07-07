@@ -17,7 +17,9 @@
 #' rounding, e.g. `rgpd_rd()`.
 #'
 #' Append "`_mmax_mean`" to the function name to use the \eqn{(M_{\max}, mean)}
-#' parameterisation, e.g. `dgpd_mmax_mean()`.
+#' parameterisation, e.g. `dgpd_mmax_mean()`. IMPORTANT: This reparameterisation
+#' requires the shape parameter of the original parameterisation to lower than 0,
+#' that is, negative. This is necessary in order to have a finite upper end point.
 #'
 #' @details
 #' Any shape values less than `shape_tolerance` are drawn from an exponential

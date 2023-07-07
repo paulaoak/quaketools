@@ -41,7 +41,9 @@ Append "\verb{_rd}" to the rgpd function to sample observations accounting for
 rounding, e.g. \code{rgpd_rd()}.
 
 Append "\verb{_mmax_mean}" to the function name to use the \eqn{(M_{\max}, mean)}
-parameterisation, e.g. \code{dgpd_mmax_mean()}.
+parameterisation, e.g. \code{dgpd_mmax_mean()}. IMPORTANT: This reparameterisation
+requires the shape parameter of the original parameterisation to lower than 0,
+that is, negative. This is necessary in order to have a finite upper end point.
 }
 \details{
 Any shape values less than \code{shape_tolerance} are calculated for an exponential
