@@ -16,6 +16,9 @@
 #' Append "`_rd`" to the rgpd function to sample observations accounting for
 #' rounding, e.g. `rgpd_rd()`.
 #'
+#' Append "`_mmax_mean`" to the function name to use the \eqn{(M_{\max}, mean)}
+#' parameterisation, e.g. `dgpd_mmax_mean()`.
+#'
 #' @details
 #' Any shape values less than `shape_tolerance` are drawn from an exponential
 #' distribution using the inverse CDF method. This is mathematically equivalent
