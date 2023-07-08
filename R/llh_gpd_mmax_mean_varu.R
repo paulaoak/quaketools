@@ -25,6 +25,8 @@
 #' @export
 llh_gpd_mmax_mean_varu <- function(mmax_mean, u, v, x, negative = FALSE){
 
+  mmax = mmax_mean[1]
+  mean = mmax_mean[2]
   # Check inputs
   stopifnot(exprs = {
     is.numeric(u)
@@ -36,9 +38,6 @@ llh_gpd_mmax_mean_varu <- function(mmax_mean, u, v, x, negative = FALSE){
     is.logical(negative)
     u <= min(v)
   })
-
-  mmax = mmax_mean[1]
-  mean = mmax_mean[2]
 
   # Obtain shape and scale parameters in terms of Mmax and mean excesses
   xi = mean / (mean - mmax)
