@@ -46,7 +46,7 @@ that is, negative. This is necessary in order to have a finite upper end point.
 \examples{
 evaluation_points <- c(-1, 0, 0.5, 1, 1.9, 2.1, 5)
 dgpd_mmax_mean(x = evaluation_points, mmax = 5, mean = 3)
-dgpd_mmax_mean(x = evaluation_points, mmax = 10, shape = 4)
+dgpd_mmax_mean(x = evaluation_points, mmax = 10, mean = 4)
 
 }
 \author{
