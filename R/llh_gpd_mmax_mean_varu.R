@@ -25,8 +25,6 @@
 #' @export
 llh_gpd_mmax_mean_varu <- function(mmax_mean, u, v, x, negative = FALSE){
 
-  mmax = mmax_mean[1]
-  mean = mmax_mean[2]
   # Check inputs
   stopifnot(exprs = {
     is.numeric(u)
