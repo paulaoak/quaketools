@@ -25,27 +25,31 @@
 #' @export
 llh_gpd_mmax_mean_varu <- function(mmax_mean, u, v, x, negative = FALSE){
 
-  mmax = mmax_mean[1] - u
-  mean = mmax_mean[2] - u
+  mmax = mmax_mean[1]
+  mean = mmax_mean[2]
   # Check inputs
   stopifnot(exprs = {
     is.numeric(u)
     length(u) == 1
     is.numeric(mmax_mean)
-    all(mmax > mean)
-    all(mean > 0)
     length(mmax_mean)==2 #unique shape and scale_u parameters
     is.logical(negative)
     u <= min(v)
   })
 
   # Obtain shape and scale parameters in terms of Mmax and mean excesses
+  mmax = mmax_mean[1] - u
+  mean = mmax_mean[2] - u
   xi = mean / (mean - mmax)
   sig = mean * mmax / (mmax - mean)
 
   # Likelihood
-  llh <- llh_gpd_varu(sigxi = c(sig, xi), u, v, x, negative = negative)
+  if((mmax <= mean) | (mean <= u)){
+    llh <- -1e7
+  }
+  else{
+    llh <- llh_gpd_varu(sigxi = c(sig, xi), u, v, x, negative = negative)
+  }
 
   return((-1)^negative * llh)
-
 }
