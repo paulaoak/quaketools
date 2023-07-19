@@ -42,7 +42,7 @@ llh_gpd_mmax_mean_varu <- function(mmax_mean, u, v, x, negative = FALSE){
   sig = mean * mmax / (mmax - mean)
 
   # Likelihood
-  if((mmax <= mean) | (mean <= u)){
+  if((mmax <= mean) | (mean <= 0)){
     llh <- -1e7
   }
   else{
