@@ -15,11 +15,6 @@ earthquake modelling easier. Functions will be provided to simulate
 from, estimate and evaluate common models used in statistical
 seismology.
 
-Minor changes of the functions from the initial package include allowing 
-input parameters for the dgpd, pgpd, qgpd and rgpd to be of different 
-lengths, where shorter vectors are recycled, as in the stats::norm 
-functions.
-
 ## Installation
 
 You can install the development version of quaketools from
